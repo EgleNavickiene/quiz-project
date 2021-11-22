@@ -5,3 +5,39 @@
 
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+// spalvu kintamieji
+$color-red: #f42e35;
+$color-grey: #3c3c3c;
+$color-black: #151515;
+
+body {
+    color: $color-black;
+}
+
+.text {    
+    &-red {
+        color: $color-red;
+    }
+
+    &-gray {
+        color:$color-grey
+    }     
+}
+
+
+.quiz {
+    min-height: 100vh;
+    background-image: url('assets/img/qbg.jpeg');
+    background-size: 100%;
+
+}
+
+.quiz-title {
+    &__subtitle {
+        color: $color-red;
+    }
+    &__description {
+        font-weight: 500;
+    }
+}
