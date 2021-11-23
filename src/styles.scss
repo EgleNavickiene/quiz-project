@@ -6,38 +6,98 @@
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
 
-// spalvu kintamieji
-$color-red: #f42e35;
-$color-grey: #3c3c3c;
-$color-black: #151515;
+/* Spalvu kintamieji */
+$color-red : #f42e35;
+$color-gray : #5b6b6e;
+$color-lightgray : #e7e7e7;
+$color-black : #151515;
 
 body {
+  /* Nustatome pagrindine teksto spalva visai svetainei */
+  color: $color-black;
+  font-family: Jost, sans-serif;
+}
+
+.text {
+  // Sugeneruojama: .text-red
+  &-red {
+    color: $color-red;
+  }
+
+  // Sugeneruojama: .text-gray
+  &-gray {
+    color: $color-gray;
+  }
+
+  // Sugeneruojama: .text-black
+  &-black {
     color: $color-black;
+  }
 }
-
-.text {    
-    &-red {
-        color: $color-red;
-    }
-
-    &-gray {
-        color:$color-grey
-    }     
-}
-
 
 .quiz {
-    min-height: 100vh;
-    background-image: url('assets/img/qbg.jpeg');
-    background-size: 100%;
+  // 100vh - 100% lango aukscio
+  min-height: 100vh;
+  background-image: url('assets/img/qbg.jpeg');
+  background-size: cover;
+  background-position: center center;
 
+  .quiz-wrapper {
+    padding: 90px 30px;
+  }
 }
 
 .quiz-title {
-    &__subtitle {
-        color: $color-red;
+  /* Ši dalis sugeneruos css klase: .quiz-title__subtitle */
+  &__subtitle {
+    color: $color-red;
+  }
+
+  &__description {
+    font-weight: 500;
+  }
+}
+
+.quiz-answer {
+  cursor: pointer;
+  &__number {
+    font-size: 30px;
+    color: $color-gray;
+    width: 50px;
+    border: 1px solid $color-lightgray;
+    text-align: center;
+    margin-right: 40px;
+    background: $white;
+    font-weight: 700;
+  }
+  &__text {
+    font-size: 23px;
+    font-weight: 600;
+    color: $color-gray;
+  }
+
+  &.selected {
+    .quiz-answer__text {
+      color: $white;
     }
-    &__description {
-        font-weight: 500;
+
+    .card {
+      background: $color-red;
     }
+  }
+}
+
+.quiz-actions {
+  background-color: $color-gray;
+  padding: 20px 30px;
+  position: fixed;
+  width: 90%;
+  margin: 0 auto;
+  left: 5%;
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+  }
 }
