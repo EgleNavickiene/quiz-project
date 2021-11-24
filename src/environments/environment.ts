@@ -3,6 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  firebase: {
+    apiKey: "AIzaSyBlDIYl3yTvEPHUkoGEzeti5szqL24rL0U",
+  authDomain: "quiz-angular-cef52.firebaseapp.com",
+  databaseURL: "https://quiz-angular-cef52-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "quiz-angular-cef52",
+  storageBucket: "quiz-angular-cef52.appspot.com",
+  messagingSenderId: "191846703080",
+  appId: "1:191846703080:web:90e2b1d08d48810fd9ce5d"
+  },
   production: false
 };
 
