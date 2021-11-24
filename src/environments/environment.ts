@@ -4,7 +4,7 @@
 
 export const environment = {
   firebase: {
-    apiKey: "AIzaSyBlDIYl3yTvEPHUkoGEzeti5szqL24rL0U",
+  apiKey: "AIzaSyBlDIYl3yTvEPHUkoGEzeti5szqL24rL0U",
   authDomain: "quiz-angular-cef52.firebaseapp.com",
   databaseURL: "https://quiz-angular-cef52-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "quiz-angular-cef52",
