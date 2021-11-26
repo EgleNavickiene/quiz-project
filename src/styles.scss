@@ -8,9 +8,10 @@
 
 /* Spalvu kintamieji */
 $color-red : #f42e35;
-$color-gray : #5b6b6e;
+$color-gray : #446d76;
 $color-lightgray : #e7e7e7;
-$color-black : #151515;
+$color-black : #3c3c3c;
+
 
 body {
   /* Nustatome pagrindine teksto spalva visai svetainei */
@@ -35,78 +36,7 @@ body {
   }
 }
 
-.quiz {
-  // 100vh - 100% lango aukscio
-  min-height: 100vh;
-  background-image: url('assets/img/qbg.jpeg');
-  background-size: cover;
-  background-position: center center;
-
-  .quiz-wrapper {
-    padding: 90px 30px;
-  }
+.navbar {
+  background-color: $color-black;
 }
 
-.quiz-title {
-  /* Ši dalis sugeneruos css klase: .quiz-title__subtitle */
-  &__subtitle {
-    color: $color-red;
-  }
-
-  &__description {
-    font-weight: 500;
-  }
-}
-
-.quiz-answer {
-  cursor: pointer;
-  &__number {
-    font-size: 30px;
-    color: $color-gray;
-    width: 50px;
-    border: 1px solid $color-lightgray;
-    text-align: center;
-    margin-right: 40px;
-    background: $white;
-    font-weight: 700;
-  }
-  &__text {
-    font-size: 23px;
-    font-weight: 600;
-    color: $color-gray;
-  }
-
-  &.selected {
-    .quiz-answer__text {
-      color: $white;
-    }
-
-    .card {
-      background: $color-red;
-    }
-  }
-}
-
-.quiz-actions {
-  background-color: $color-gray;
-  padding: 20px 30px;
-  position: fixed;
-  width: 90%;
-  margin: 0 auto;
-  left: 5%;
-
-  &__icon {
-    position: absolute;
-    left: 0;
-    bottom: 100%;
-  }
-}
-
-.quiz-answers-container {  
-
-  padding-bottom: 200px;
-
-  // @include media-breakpoint-down(md) {
-  //  ??
-  // }
-}

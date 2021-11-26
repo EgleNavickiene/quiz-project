@@ -1,0 +1,101 @@
+// Importuojame kintamuju faila
+@import "/src/variables";
+
+:host {
+  .quiz {
+    // 100vh - 100% lango aukscio
+    min-height: 100vh;
+    background-image: url('/assets/img/qbg.jpeg');
+    background-size: cover;
+    background-position: center center;
+
+    .quiz-wrapper {
+      padding: 50px 30px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+
+  .quiz-title {
+
+    /* Ši dalis sugeneruos css klase: .quiz-title__subtitle */
+    &__subtitle {
+      color: $color-red;
+    }
+
+    &__description {
+      font-weight: 500;
+    }
+  }
+
+  .quiz-answer {
+    cursor: pointer;
+
+    &__number {
+      font-size: 30px;
+      width: 50px;
+      border: 1px solid $color-lightgray;
+      text-align: center;
+      margin-right: 40px;
+      background: $white;
+      font-weight: 700;
+    }
+
+    &__text {
+      font-size: 23px;
+      font-weight: 600;
+      color: $color-gray;
+    }
+
+    &.selected {
+      .quiz-answer__text {
+        color: $white;
+      }
+
+      .card {
+        background: $color-red;
+      }
+    }
+  }
+
+  .quiz-answers-container {
+    /*
+    TODO: Kaip padaryti, kad tai butu dinamine reiksme
+    priklausoma nuo .quiz-actions aukscio
+    */
+
+    /*
+    Boostrap responsive breakpoints dokumentacija:
+    https://getbootstrap.com/docs/5.0/layout/breakpoints/
+    Daugiau apie SCSS mixins:
+    https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/
+    */
+    /*
+    Šis užrašymas sugeneruos:
+    @media (min-width: 768px) { ... }
+    */
+    @include media-breakpoint-down(md) {
+      padding-bottom: 100px;
+    }
+  }
+
+  .quiz-actions {
+    background: #3c3c3c;
+    padding: 20px 30px;
+    width: 90%;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 0;
+    left: 5%;
+
+    &__icon {
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+    }
+
+    .btn {
+      font-size: 18px;
+    }
+  }
+}
