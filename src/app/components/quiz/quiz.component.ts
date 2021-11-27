@@ -20,8 +20,12 @@ export class QuizComponent implements OnInit {
   public today: any = new Date();
   public currentQuestion: number = 0;
 
+  public userAnswers : Array<any> = [];
+
   // Kintamasis saugoti kiek % klausimu yra atsakyta
   public progress: number = 0;
+
+  public selectedAnswerkey : any = {};
 
   constructor(db: AngularFireDatabase,
     private route: ActivatedRoute,
@@ -58,7 +62,12 @@ export class QuizComponent implements OnInit {
     console.log("Progress: " + this.progress);
   }
 
+  userSelectedAnswer(question: any, answer: any) {
+
+  }
+
   ngOnInit(): void {
   }
+
 
 }

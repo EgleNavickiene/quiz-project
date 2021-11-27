@@ -8,7 +8,9 @@
               <!-- Quiz Title -->
               <div class="quiz-title text-center">
                 <div *ngIf="quiz.title">
-                  Quiz Title: {{ quiz.title }}
+                    <h4 class="text-red">
+                        Quiz: <strong> {{ quiz.title }}</strong>
+                    </h4>                  
                 </div>
   
                 <span>Šiandien yra: {{ today |  date:'shortTime' }}</span>
@@ -37,8 +39,9 @@
                   </div>
                   <div class="row">
                     <div class="col-sm-6 mb-3 quiz-answer"
+                    [calss.selected]="answer == selectedAnswer"
                     *ngFor="let answer of question.value.answers | keyvalue">
-                      <div class="card">
+                      <div class="card" (click)="userSelectedAnswer(question, answer)">
                         <div class="card-body d-flex flex-nowrap align-items-center">
                           <div class="quiz-answer__number">
                             {{ answer.key }}
@@ -64,8 +67,8 @@
       <div class="quiz-actions__icon">
         <img src="assets/img/bq1.png" />
       </div>
-      <div class="row align-items-center">
-        <div class="col-3">
+      <div class="row quiz-quest-buttons align-items-center">
+        <div class="col-lg-3">
           <button class="btn btn-lg btn-light text-uppercase fw-bold"
           [disabled]="currentQuestion < 1"
           (click)="previousQuestion()">
@@ -73,11 +76,12 @@
           </button>
         </div>
   
-        <div class="col-6">
+        <div class="col-lg-6">
           <progressbar [value]="progress" type="danger" ></progressbar>
         </div>
   
-        <div class="col-3 text-end">
+        <div class="col-lg-3 btn-next">
+            [disabled]="selectedAnswerkey == null"
           <button class="btn btn-lg btn-light text-uppercase fw-bold" (click)="nextQuestion()">
             Next Question
           </button>
